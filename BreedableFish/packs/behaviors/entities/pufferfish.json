@@ -35,8 +35,8 @@
 					"value": 0.7
 				},
 				"minecraft:health": {
-					"value": 4,
-					"max": 4
+					"value": 2,
+					"max": 2
 				},
 				"minecraft:is_baby": {},
 				"minecraft:ageable": {

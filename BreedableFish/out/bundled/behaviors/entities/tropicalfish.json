@@ -511,8 +511,8 @@
 					"value": 0.7
 				},
 				"minecraft:health": {
-					"value": 4,
-					"max": 4
+					"value": 2,
+					"max": 2
 				},
 				"minecraft:loot": {
 					"table": "loot_tables/entities/tropicalfish.json"
