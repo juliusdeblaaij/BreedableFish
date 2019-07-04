@@ -1,0 +1,154 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:cod",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"baby_cod": {
+				"minecraft:scale": {
+					"value": 0.4
+				},
+				"minecraft:health": {
+					"value": 4,
+					"max": 4
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/entities/fish.json"
+				},
+				"minecraft:is_baby": {},
+				"minecraft:ageable": {
+					"duration": 600,
+					"feedItems": [
+						{
+							"item": "minecraft:dried_kelp"
+						}
+					],
+					"grow_up": {
+						"event": "minecraft:grown_up",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"cod",
+					"fish"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.3
+			},
+			"minecraft:health": {
+				"value": 6,
+				"max": 6
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/fish.json"
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0,
+				"breathesAir": false,
+				"breathesWater": true
+			},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.1
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": false,
+				"can_path_over_water": false,
+				"can_swim": true,
+				"can_walk": false,
+				"can_breach": false,
+				"can_sink": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:movement.sway": {
+				"sway_amplitude": 0
+			},
+			"minecraft:behavior.swim_idle": {
+				"priority": 5
+			},
+			"minecraft:behavior.random_swim": {
+				"priority": 3,
+				"speed_multiplier": 1,
+				"xz_dist": 16,
+				"y_dist": 4,
+				"interval": 0
+			},
+			"minecraft:behavior.swim_wander": {
+				"priority": 4,
+				"speed_multiplier": 1,
+				"interval": 10,
+				"look_ahead": 2
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 1,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 6,
+						"walk_speed_multiplier": 1.5,
+						"sprint_speed_multiplier": 2
+					}
+				]
+			},
+			"minecraft:nameable": {},
+			"minecraft:breedable": {
+				"requireTame": false,
+				"breedItems": [
+					"minecraft:kelp"
+				],
+				"breedsWith": {
+					"mateType": "minecraft:cod",
+					"babyType": "minecraft:cod",
+					"breed_event": {
+						"event": "minecraft:entity_born",
+						"target": "baby"
+					}
+				}
+			},
+			"minecraft:behavior.breed": {
+				"priority": 1,
+				"speed_multiplier": 0.5
+			}
+		},
+		"events": {
+			"minecraft:entity_born": {
+				"add": {
+					"component_groups": [
+						"baby_cod"
+					]
+				},
+				"remove": {}
+			},
+			"minecraft:grown_up": {
+				"add": {},
+				"remove": {
+					"component_groups": [
+						"baby_cod"
+					]
+				}
+			}
+		}
+	}
+}
