@@ -46,6 +46,10 @@
 				"minecraft:behavior.panic": {
 					"priority": 1,
 					"speed_multiplier": 1.25
+				},
+				"minecraft:health": {
+					"value": 5,
+					"max": 5
 				}
 			},
 			"minecraft:dolphin_angry": {
