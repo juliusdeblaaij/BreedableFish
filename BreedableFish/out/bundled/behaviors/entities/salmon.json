@@ -52,9 +52,6 @@
 					"value": 2,
 					"max": 2
 				},
-				"minecraft:loot": {
-					"table": "loot_tables/entities/salmon_normal.json"
-				},
 				"minecraft:is_baby": {},
 				"minecraft:ageable": {
 					"duration": 600,
@@ -196,10 +193,22 @@
 						"baby_salmon"
 					]
 				},
-				"remove": {}
+				"remove": {
+					"component_groups": [
+						"scale_small",
+						"scale_normal",
+						"scale_large"
+					]
+				}
 			},
 			"minecraft:grown_up": {
-				"add": {},
+				"add": {
+					"component_groups": [
+						"scale_small",
+						"scale_normal",
+						"scale_large"
+					]
+				},
 				"remove": {
 					"component_groups": [
 						"baby_salmon"
