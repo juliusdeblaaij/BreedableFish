@@ -514,9 +514,6 @@
 					"value": 2,
 					"max": 2
 				},
-				"minecraft:loot": {
-					"table": "loot_tables/entities/tropicalfish.json"
-				},
 				"minecraft:is_baby": {},
 				"minecraft:ageable": {
 					"duration": 300,
@@ -529,6 +526,11 @@
 						"event": "minecraft:grown_up",
 						"target": "self"
 					}
+				}
+			},
+			"minecraft:adult_tropicalfish": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/tropicalfish.json"
 				}
 			}
 		},
@@ -546,9 +548,6 @@
 			"minecraft:health": {
 				"value": 6,
 				"max": 6
-			},
-			"minecraft:loot": {
-				"table": "loot_tables/entities/tropicalfish.json"
 			},
 			"minecraft:scale": {
 				"value": 1.3
@@ -628,6 +627,9 @@
 			"minecraft:behavior.breed": {
 				"priority": 1,
 				"speed_multiplier": 1.5
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/tropicalfish.json"
 			}
 		},
 		"events": {
@@ -1122,10 +1124,18 @@
 						"minecraft:baby_tropicalfish"
 					]
 				},
-				"remove": {}
+				"remove": {
+					"component_groups": [
+						"minecraft:adult_tropicalfish"
+					]
+				}
 			},
 			"minecraft:grown_up": {
-				"add": {},
+				"add": {
+					"component_groups": [
+						"minecraft:adult_tropicalfish"
+					]
+				},
 				"remove": {
 					"component_groups": [
 						"minecraft:baby_tropicalfish"
