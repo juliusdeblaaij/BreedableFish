@@ -23,6 +23,10 @@
 						"event": "minecraft:grown_up",
 						"target": "self"
 					}
+				},
+				"minecraft:health": {
+					"value": 5,
+					"max": 5
 				}
 			},
 			"minecraft:squid_leashed": {
