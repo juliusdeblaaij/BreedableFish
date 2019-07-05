@@ -10,14 +10,11 @@
 		"component_groups": {
 			"baby_cod": {
 				"minecraft:scale": {
-					"value": 0.4
+					"value": 0.6
 				},
 				"minecraft:health": {
 					"value": 2,
 					"max": 2
-				},
-				"minecraft:loot": {
-					"table": "loot_tables/entities/fish.json"
 				},
 				"minecraft:is_baby": {},
 				"minecraft:ageable": {
@@ -31,6 +28,11 @@
 						"event": "minecraft:grown_up",
 						"target": "self"
 					}
+				}
+			},
+			"adult_cod": {
+				"minecraft:loot": {
+					"table": {}
 				}
 			}
 		},
