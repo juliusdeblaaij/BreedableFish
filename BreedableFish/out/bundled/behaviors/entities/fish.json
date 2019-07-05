@@ -32,7 +32,7 @@
 			},
 			"adult_cod": {
 				"minecraft:loot": {
-					"table": {}
+					"table": "loot_tables/entities/fish.json"
 				}
 			}
 		},
@@ -141,10 +141,18 @@
 						"baby_cod"
 					]
 				},
-				"remove": {}
+				"remove": {
+					"component_groups": [
+						"adult_cod"
+					]
+				}
 			},
 			"minecraft:grown_up": {
-				"add": {},
+				"add": {
+					"component_groups": [
+						"adult_cod"
+					]
+				},
 				"remove": {
 					"component_groups": [
 						"baby_cod"
