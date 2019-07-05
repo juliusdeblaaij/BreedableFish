@@ -22,6 +22,8 @@ This add-on adds breedable fish to Minecraft: Bedrock Edition, on Windows 10 and
 
 - Tropical fish are currently able to breed within different variants.
 (Fortunately, atleast one of the parent fish' variant is used for the offspring.)
-- None of the fish have a breed cooldown (there is a small amount of cooldown, but not the regulare 5 minutes).
+- None of the fish have a breed cooldown (there is a small amount of cooldown, but not the regular 5 minutes).
 - Dolphin babies are larger than their parents
 - Dolphin babies still give loot
+- Dolphins require a push so they stop circling around each other and start mating
+- Dolphin babies are able to mate
