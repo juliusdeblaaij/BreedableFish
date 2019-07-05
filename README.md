@@ -7,6 +7,7 @@ This add-on adds breedable fish to Minecraft: Bedrock Edition, on Windows 10 and
 - Salmon
 - Tropical fish
 - Dolphins
+- Squid
 
 ## Stats Per Fish Type
 
@@ -17,6 +18,7 @@ This add-on adds breedable fish to Minecraft: Bedrock Edition, on Windows 10 and
 |Salmon baby|2 Health points|Kelp|Dried Kelp|
 |Tropical fish baby|2 Health points|Kelp|Dried Kelp|
 |Dolphin baby|5 Health points|Salmon|Salmon|
+|Squid baby|5 Health points|Salmon|Salmon|
 
 ## Known Issues
 
