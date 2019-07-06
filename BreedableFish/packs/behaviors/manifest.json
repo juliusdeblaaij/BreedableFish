@@ -1,25 +1,35 @@
 {
-	"format_version": 1,
-	"header": {
-		"name": "Breedable Fish",
-		"description": "This add-on adds breedable fish into Minecraft! By Julius de Blaaij.",
-		"uuid": "ff519beb-a5cc-4535-b752-3f86da4c98fc",
-		"version": [
-			1,
-			0,
-			0
-		]
-	},
-	"modules": [
-		{
-			"description": "behaviours for Breedable Fish",
-			"type": "data",
-			"uuid": "e5574c9f-4516-4172-a0be-9d4a06eb5ec9",
-			"version": [
-				1,
-				0,
-				0
-			]
-		}
-	]
+  "format_version": 1,
+  "header": {
+    "name": "BreedableFish Behaviors",
+    "description": "This add-on adds breedable fish into Minecraft! By Julius de Blaaij.",
+    "uuid": "34eee5b7-85ae-4172-98bd-8c4b4e613166",
+    "version": [
+      1,
+      0,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "behaviours for BreedableFish",
+      "type": "client_data",
+      "uuid": "5c418274-ae31-438b-84d1-769fcad10004",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "05955673-1aee-459c-98f3-94b0df9f89f1",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
 }
