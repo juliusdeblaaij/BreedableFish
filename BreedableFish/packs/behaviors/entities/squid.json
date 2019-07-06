@@ -57,34 +57,6 @@
 					"priority": 1,
 					"speed_multiplier": 5
 				}
-			},
-			"squid_uncaptured": {
-				"minecraft:interact": [
-					{
-						"play_sounds": "armor.equip_generic",
-						"on_interact": {
-							"filters": {
-								"all_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "player"
-									},
-									{
-										"test": "has_equipment",
-										"domain": "hand",
-										"subject": "other",
-										"value": "minecraft:bucket"
-									}
-								]
-							},
-							"event": "breedablefish:on_captured",
-							"target": "self"
-						},
-						"use_item": true,
-						"interact_text": "action.interact.attachchest"
-					}
-				]
 			}
 		},
 		"components": {
@@ -147,7 +119,33 @@
 			"minecraft:behavior.squid_out_of_water": {
 				"priority": 2
 			},
-			"minecraft:physics": {}
+			"minecraft:physics": {},
+			"minecraft:interact": [
+				{
+					"play_sounds": "armor.equip_generic",
+					"on_interact": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "minecraft:stick"
+								}
+							]
+						},
+						"event": "breedablefish:on_captured",
+						"target": "self"
+					},
+					"use_item": true,
+					"interact_text": "action.interact.attachchest"
+				}
+			]
 		},
 		"events": {
 			"minecraft:entity_spawned": {
@@ -170,7 +168,8 @@
 							]
 						}
 					}
-				]
+				],
+				"add": {}
 			},
 			"minecraft:on_leash": {
 				"add": {
@@ -214,11 +213,7 @@
 			},
 			"breedablefish:on_captured": {
 				"add": {},
-				"remove": {
-					"component_groups": [
-						"squid_uncaptured"
-					]
-				}
+				"remove": {}
 			}
 		}
 	}

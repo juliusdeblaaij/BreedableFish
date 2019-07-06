@@ -6,19 +6,22 @@ let globalVars = {};
 globalVars.emptyQuery = {};
 globalVars.isFirstTick = false;
 
+const capturedComponent = "breedablefish:captured";
+
 //var onCapturedEvent = { narf: false };
 
 // Setup which events to listen for
 clientSystem.initialize = function () {
     // set up your listenToEvents and register client-side components here.
     this.listenForEvent("minecraft:client_entered_world", (eventData) => this.clientJoined(eventData));
+    this.listenForEvent("breedablefish:on_captured", (eventData) => this.onCaptured(eventData));
 
     //this.registerComponent("breedablefish:captured", { value: 0 });
 
     //filtered_query = this.registerQuery();
     //this.addFilterToQuery(filtered_query, "minecraft:behavior.squid_idle");//breedablefish:captured
 
-    this.registerComponent("breedablefish:captured", { value: 0 });
+    this.registerComponent(capturedComponent, { status: 0 });
 
     globalVars.emptyQuery = this.registerQuery();
 }
@@ -70,17 +73,28 @@ clientSystem.update = function () {
             if (captured_entity.__identifier__ === "minecraft:squid") {
                 //this.broadcastEvent(displaychat, "§aFound squid");
 
-                if (this.hasComponent(captured_entity, "breedablefish:captured")) {
-                    this.broadcastEvent(displaychat, "§aFound squid with component");
+                if (this.hasComponent(captured_entity, capturedComponent)) {
+                    //this.broadcastEvent(displaychat, "§aFound squid with component");
+                    //let _capturedComponent = this.getComponent(captured_entity, capturedComponent);
+
+                    //_capturedComponent.data.status = 
+
+                }
+
+                if (this.hasComponent(captured_entity, "minecraft:interact")) {
+                    this.broadcastEvent(displaychat, "§aFound squid with interact");
+                    //let _capturedComponent = this.getComponent(captured_entity, capturedComponent);
+
+                    //_capturedComponent.data.status = 
 
                 }
             }
-
-            //if (this.hasComponent(captured_entity, "breedablefish:captured")) {
-            //    this.broadcastEvent(displaychat, "§aFound squid with components...");
-
-            //}
         }
     }
     
+}
+
+clientSystem.onCaptured = function (eventData) {
+    this.broadcastEvent(displaychat, "§aCaptured");
+
 }
