@@ -57,6 +57,34 @@
 					"priority": 1,
 					"speed_multiplier": 5
 				}
+			},
+			"squid_uncaptured": {
+				"minecraft:interact": [
+					{
+						"play_sounds": "armor.equip_generic",
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "minecraft:bucket"
+									}
+								]
+							},
+							"event": "breedablefish:on_captured",
+							"target": "self"
+						},
+						"use_item": true,
+						"interact_text": "action.interact.attachchest"
+					}
+				]
 			}
 		},
 		"components": {
@@ -181,6 +209,14 @@
 				"remove": {
 					"component_groups": [
 						"minecraft:squid_baby"
+					]
+				}
+			},
+			"breedablefish:on_captured": {
+				"add": {},
+				"remove": {
+					"component_groups": [
+						"squid_uncaptured"
 					]
 				}
 			}
